@@ -12,6 +12,7 @@ import { Hero } from "@/components/Hero";
 import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
 import { ProjectInfo } from "@/components/ProjectInfo";
+import { Reveal, type RevealDirection } from "@/components/Reveal";
 import { siteConfig, type SectionKey } from "@/config/site";
 
 // Registry the dynamic layout resolves siteConfig.layoutOrder against.
@@ -29,6 +30,18 @@ const sectionComponents: Record<SectionKey, ComponentType> = {
   Pricing,
 };
 
+// Varies each section's entrance direction so the scroll-down reveal doesn't
+// feel like the same animation repeating; Hero is exempt (renders instantly).
+const sectionRevealDirection: Partial<Record<SectionKey, RevealDirection>> = {
+  ProjectInfo: "up",
+  Location: "left",
+  Amenities: "right",
+  GoldValues: "scale",
+  ApartmentDesign: "left",
+  FloorPlan: "right",
+  Pricing: "up",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -37,10 +50,21 @@ export default function HomePage() {
       <main>
         {siteConfig.layoutOrder.map((sectionKey) => {
           const Section = sectionComponents[sectionKey];
-          return <Section key={sectionKey} />;
+          // Hero renders immediately (no fade-in) so it doesn't delay LCP;
+          // every section below it fades in as the user scrolls to it.
+          if (sectionKey === "Hero") {
+            return <Section key={sectionKey} />;
+          }
+          return (
+            <Reveal key={sectionKey} direction={sectionRevealDirection[sectionKey]}>
+              <Section />
+            </Reveal>
+          );
         })}
       </main>
-      <Footer />
+      <Reveal direction="scale">
+        <Footer />
+      </Reveal>
       <FloatingActions />
     </>
   );
