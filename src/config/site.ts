@@ -57,12 +57,12 @@ export const siteConfig = {
     "Noble Crystal Riverside - Tổ hợp căn hộ 4.0 ven sông tại Nam Sài Gòn (Quận 7), phát triển bởi Sunshine Group. Không gian nghỉ dưỡng hình số 8 độc bản trên trục đường Đào Trí, liền kề Phú Mỹ Hưng.",
   // Standalone domain, no gateway/rewrite project involved — see CLAUDE.md
   // "Domain architecture". Keep this in sync with next.config.mjs's basePath.
-  url: "https://hovanchuong.site/noble-crystal-riverside",
-  basePath: "/noble-crystal-riverside",
-  hotline: "0853400891",
-  hotlineDisplay: "0853.400.891",
-  zaloNumber: "0853400891",
-  zaloLink: "https://zalo.me/0853400891",
+  url: "https://www.minhhoanghome.site/hoangminhhome",
+  basePath: "/hoangminhhome",
+  hotline: "0914978925",
+  hotlineDisplay: "0914.978.925",
+  zaloNumber: "0914978925",
+  zaloLink: "https://zalo.me/0914978925",
   email: "cskh@noblecrystalriverside.com",
   address: "Đường Đào Trí, Phường Phú Thuận, Quận 7, TP. Hồ Chí Minh",
   salesOffice: "422 Đường Đào Trí, Phường Phú Thuận, Quận 7, TP. Hồ Chí Minh",
@@ -254,9 +254,9 @@ export const siteConfig = {
       "bảng giá Noble Crystal Riverside",
     ],
     // Full absolute URL (not root-relative) — a leading "/" here would
-    // resolve against the domain root and drop the /noble-crystal-riverside
+    // resolve against the domain root and drop the /hoangminhhome
     // prefix when combined with metadataBase.
-    ogImage: "https://hovanchuong.site/noble-crystal-riverside/images/noble-crystal-riverside/hero-exterior.jpg",
+    ogImage: "https://www.minhhoanghome.site/hoangminhhome/images/noble-crystal-riverside/hero-exterior.jpg",
   },
   nav: [
     { label: "Tổng quan", href: "#tong-quan" },
